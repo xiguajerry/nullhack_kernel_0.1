@@ -1,0 +1,7 @@
+# Files
+*.o
+*.bin
+*.img
+
+# Directories
+.vscode/

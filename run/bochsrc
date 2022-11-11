@@ -1,0 +1,15 @@
+# Configuration for Bochs
+
+megs: 32
+
+romimage: file=/usr/share/bochs/BIOS-bochs-latest
+vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+
+ata0-master: type=disk, path="a.img", mode=flat
+
+#floppya: 1_44=a.img, status=inserted
+
+boot: disk
+
+mouse: enabled=0
+
