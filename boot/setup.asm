@@ -100,8 +100,9 @@ _setup_32:
     mov cr0, eax ; That's it!!
 
 ; Note: the 'main' label is just a test for protect mode. Actually,
-; in the following steps, we should turn to the code compiled by g++
+; in the following steps, we should turn to the code compiled by gcc
 ; which is written in C programming language.
+; But I think we can load the program in Protected Mode. Just a JOKE
 
 ; TODO
 ; I don't want to reprogram the interrupt and the ugliest code to 
