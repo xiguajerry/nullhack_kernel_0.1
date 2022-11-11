@@ -19,7 +19,7 @@
 ;| 00000 | 003FF |    1kB   |          Interrupt Vector Table               |
 ;|--------------------------------------------------------------------------|
 ;
-; TODO: Modify the GDT dynamically accroding to the real memory size.
+; TODO: Modify the GDT dynamically accroding to the real memory size
 ; After enable the Protect Mode, the low 1mB memory should be protected. (DPL 0)
 ; Then, 0x00010000 to 0x7FFFFFFF is User Space, (DPL 3)
 ; 0x80000000 to 0xFFFFFFFF is Kernel Space. (DPL 0)
@@ -403,7 +403,7 @@ _read_disk_lba:
     mov al, ch
     out dx, al
     mov al, cl
-    out dx, al      ; 写两次0x1f2端口: 第一次要读的扇区数的高8位,第二次低8位
+    out dx, al      ; Write 0x1f2: 1. high 8 bit of sector; 2. low 8 bit etc.
     pop eax
 ;-------
     inc dx
@@ -413,7 +413,7 @@ _read_disk_lba:
     out dx, al
     pop eax
     
-    out dx, al      ; 写0x1f3: LBA参数的24~31位; 写0x1f3: LBA参数的0~7位
+    out dx, al      ; Write 0x1f3: 1. 24-31 bit of LBA argument; 2. 0-7 bit etc.
 ;-------
     inc dx
 
@@ -424,7 +424,7 @@ _read_disk_lba:
 
     push eax
     mov al, ah
-    out dx, al      ; 写0x1f4: LBA参数的32~39位(unused); 写0x1f4: LBA参数的8~15位
+    out dx, al      ; Write 0x1f4: 1. 32-39 bit(unused); 2. 8-15 bit;
     pop eax
 ;-------
     inc dx
@@ -435,7 +435,7 @@ _read_disk_lba:
     pop eax
 
     shr eax, 16
-    out dx, al      ; 写0x1f5:LBA参数的40~47位(unused); 写0x1f5: LBA参数的16~23位
+    out dx, al      ; Write 0x1f5: 1. 40-47 bit(unused); 2. 16-23 bit;
 ;-------
     inc dx
     mov al, 0x40 ; lba48-0x40; lba28-0xe0
