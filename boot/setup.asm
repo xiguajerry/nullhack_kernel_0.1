@@ -93,9 +93,9 @@ _setup_32:
 ; configure the Bochs.
 
 ; We may not need this, I think. But I haven't tested it.
-    ; push __unreachable
+; push __unreachable
 
-	mov	eax, cr0
+    mov	eax, cr0
     or eax, 1 ; The first bit stands for whether the PE is enabled or not.
     mov cr0, eax ; That's it!!
 
