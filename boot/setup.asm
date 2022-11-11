@@ -87,7 +87,7 @@ _setup_32:
 ; Well, now's the time to actually move into protected mode. To make
 ; things as simple as possible, we do no register set-up or anything,
 ; we let the gnu-compiled 32-bit programs do that. We just jump to
-; absolute address 0x00000, in 32-bit protected mode.
+; absolute address 0x10000(compiled from C), in 32-bit protected mode.
 ; 2022/11/11,11:15pm: I implemented LBA48 to read hard disk, but
 ; floppy reading is still a problem. So I temporarily use a disk to
 ; configure the Bochs.
