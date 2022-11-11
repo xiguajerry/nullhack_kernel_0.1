@@ -19,6 +19,7 @@
 ;| 00000 | 003FF |    1kB   |          Interrupt Vector Table               |
 ;|--------------------------------------------------------------------------|
 ;
+; TODO: Modify the GDT dynamically accroding to the real memory size.
 ; After enable the Protect Mode, the low 1mB memory should be protected. (DPL 0)
 ; Then, 0x00010000 to 0x7FFFFFFF is User Space, (DPL 3)
 ; 0x80000000 to 0xFFFFFFFF is Kernel Space. (DPL 0)
