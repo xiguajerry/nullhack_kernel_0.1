@@ -88,6 +88,9 @@ _setup_32:
 ; things as simple as possible, we do no register set-up or anything,
 ; we let the gnu-compiled 32-bit programs do that. We just jump to
 ; absolute address 0x00000, in 32-bit protected mode.
+; 2022/11/11,11:15pm: I implemented LBA48 to read hard disk, but
+; floppy reading is still a problem. So I temporarily use a disk to
+; configure the Bochs.
 
 ; We may not need this, I think. But I haven't tested it.
     ; push __unreachable
