@@ -2,6 +2,7 @@
 #define _H_MAIN
 
 #include <stddef.h>
+#include <config.h>
 
 #define sti() __asm__ ("sti");
 

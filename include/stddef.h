@@ -6,6 +6,7 @@
 
 typedef int bool;
 
+#define _SIZE_T
 typedef unsigned long size_t;
 
 // #define __buitin_va_args va_args

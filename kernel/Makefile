@@ -9,7 +9,7 @@ CFLAGS += -I../include -I../include/kernel
 CFLAGS += -ffunction-sections -nostdlib -nostdinc -fno-builtin -ffreestanding
 CFLAGS += -fno-pie
 
-all: main.o page.o
+all: vsprintf.o
 	
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
